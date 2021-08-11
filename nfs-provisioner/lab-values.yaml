@@ -1,0 +1,20 @@
+nfs:
+  server: 192.168.86.191
+  path: /SRV/NFS/kubedata
+  mountOptions:
+  volumeName: nfs-subdir-external-provisioner-root
+
+# For creating the StorageClass automatically:
+storageClass:
+  create: true
+
+  # Set a provisioner name. If unset, a name will be generated.
+  provisionerName: lab.kairos.ai/nfs
+
+  # Set StorageClass as the default StorageClass
+  # Ignored if storageClass.create is false
+  defaultClass: default
+
+  # Set a StorageClass name
+  # Ignored if storageClass.create is false
+  name: managed-nfs-storage
